@@ -74,19 +74,23 @@ llm-101/
 
 ## ⚡ Quick Setup (5 minutes)
 
-### 1. Clone the repo
+### 1. Clone the Starter Template
+To follow along with all empty placeholder notebooks from scratch, clone the `starter-template` branch:
+
 ```bash
-git clone <repo-url>
+git clone -b starter-template https://github.com/GunalBondre/llm-101.git
 cd llm-101
 ```
 
+> 📌 **Starter Branch Link**: [github.com/GunalBondre/llm-101/tree/starter-template](https://github.com/GunalBondre/llm-101/tree/starter-template)
+
+---
+
 ### 2. Create a virtual environment
 ```bash
-python -m venv .venv 
-or
-python3 -m venv .venv 
-source .venv/bin/activate        # Mac/Linux
-# .venv\Scripts\activate         # Windows
+python3 -m venv .venv        # or: python -m venv .venv
+source .venv/bin/activate    # On Mac/Linux
+# .venv\Scripts\activate     # On Windows
 ```
 
 ### 3. Install dependencies
