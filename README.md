@@ -72,9 +72,10 @@ llm-101/
 
 ---
 
-## ⚡ Quick Setup (5 minutes)
+## ⚡ Setup Guide
 
 ### 1. Clone the Starter Template
+
 To follow along with all empty placeholder notebooks from scratch, clone the `starter-template` branch:
 
 ```bash
@@ -86,30 +87,165 @@ cd llm-101
 
 ---
 
-### 2. Create a virtual environment
+### 🍎 macOS Setup
+
+#### Step 1 — Install Python 3.11+
+
+**Option A: Homebrew (Recommended)**
+
+If you don't have Homebrew installed, install it first:
+
 ```bash
-python3 -m venv .venv        # or: python -m venv .venv
-source .venv/bin/activate    # On Mac/Linux
-# .venv\Scripts\activate     # On Windows
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### 3. Install dependencies
+Then install Python:
+
 ```bash
+brew install python@3.11
+```
+
+Add it to your PATH (add this to `~/.zshrc`):
+
+```bash
+echo 'export PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+Verify:
+
+```bash
+python3 --version   # Should show Python 3.11.x
+```
+
+**Option B: pyenv (Best for managing multiple Python versions)**
+
+```bash
+brew install pyenv
+pyenv install 3.11
+pyenv global 3.11
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+source ~/.zshrc
+python --version   # Should show Python 3.11.x
+```
+
+#### Step 2 — Create a Virtual Environment
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Your terminal prompt should now show `(.venv)`.
+
+#### Step 3 — Install Dependencies
+
+```bash
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 4. Set up your API keys
+#### Step 4 — Set Up API Keys
+
 ```bash
 cp .env.example .env
-# Open .env and add your OpenAI key
+open .env   # Opens in TextEdit — add your API keys
 ```
 
-### 5. Launch Jupyter
+#### Step 5 — Launch JupyterLab
+
 ```bash
 jupyter lab
 ```
 
 Then open `module-00-foundations/01_tokens_and_costs.ipynb` 🚀
+
+**macOS Troubleshooting**
+
+| Problem | Fix |
+|---------|-----|
+| `python3: command not found` | Run `brew install python@3.11` |
+| `pip: command not found` | Run `python3 -m pip install --upgrade pip` |
+| JupyterLab won't open in browser | Navigate manually to `http://localhost:8888` |
+| SSL certificate errors | Run `brew install ca-certificates` |
+
+---
+
+### 🪟 Windows Setup
+
+#### Step 1 — Install Python 3.11+
+
+**Option A: winget (Recommended — built into Windows 10/11)**
+
+Open **PowerShell as Administrator** (Win + X → Terminal Admin):
+
+```powershell
+winget install -e --id Python.Python.3.11
+```
+
+Close and reopen your terminal, then verify:
+
+```powershell
+python --version   # Should show Python 3.11.x
+```
+
+> ⚠️ **If `python` opens the Microsoft Store instead:** Go to **Settings → Apps → Advanced app settings → App execution aliases** and toggle **OFF** `python.exe` and `python3.exe`.
+
+**Option B: Official Installer**
+
+1. Download from [python.org/downloads](https://www.python.org/downloads/)
+2. Run the installer — **✅ check "Add Python to PATH"** before clicking Install
+3. Verify in a new terminal: `python --version`
+
+#### Step 2 — Create a Virtual Environment
+
+Open **PowerShell** or **Command Prompt** in the project folder:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+Your prompt should now show `(.venv)`.
+
+> ⚠️ **If you get a script execution error in PowerShell**, run this once:
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
+#### Step 3 — Install Dependencies
+
+```powershell
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+#### Step 4 — Set Up API Keys
+
+```powershell
+copy .env.example .env
+notepad .env   # Add your API keys and save
+```
+
+#### Step 5 — Launch JupyterLab
+
+```powershell
+jupyter lab
+```
+
+Then open `module-00-foundations/01_tokens_and_costs.ipynb` 🚀
+
+**Windows Troubleshooting**
+
+| Problem | Fix |
+|---------|-----|
+| `python` opens Microsoft Store | Disable App Execution Aliases in Settings |
+| `pip` not recognized | Run `python -m pip install --upgrade pip` |
+| `.venv\Scripts\activate` fails | Run `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` |
+| JupyterLab won't open | Navigate manually to `http://localhost:8888` |
+| `pip install` permission error | Run PowerShell as Administrator |
 
 ---
 
