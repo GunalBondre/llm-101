@@ -9,3 +9,4 @@ dist/
 chroma_db/
 *.faiss
 scripts/
+assets/
