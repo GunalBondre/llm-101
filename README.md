@@ -1,4 +1,5 @@
 # 🤖 Frontend → Full-Stack AI Engineer
+
 ### The Complete LLM Engineering Course
 
 > Built for developers with frontend experience who want to break into AI engineering at $100k+
@@ -75,32 +76,37 @@ llm-101/
 ## ⚡ Quick Setup (5 minutes)
 
 ### 1. Clone the repo
+
 ```bash
 git clone <repo-url>
 cd llm-101
 ```
 
 ### 2. Create a virtual environment
+
 ```bash
-python -m venv .venv 
+python -m venv .venv
 or
-python3 -m venv .venv 
+python3 -m venv .venv
 source .venv/bin/activate        # Mac/Linux
 # .venv\Scripts\activate         # Windows
 ```
 
 ### 3. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 4. Set up your API keys
+
 ```bash
 cp .env.example .env
 # Open .env and add your OpenAI key
 ```
 
 ### 5. Launch Jupyter
+
 ```bash
 jupyter lab
 ```
@@ -111,11 +117,11 @@ Then open `module-00-foundations/01_tokens_and_costs.ipynb` 🚀
 
 ## 🔑 Required API Keys
 
-| Service | Where to get it | Cost |
-|---------|----------------|------|
-| OpenAI | [platform.openai.com](https://platform.openai.com) | ~$5 credit free on signup |
-| Anthropic | [console.anthropic.com](https://console.anthropic.com) | ~$5 credit free |
-| Others | Added per module | Free tiers available |
+| Service   | Where to get it                                        | Cost                      |
+| --------- | ------------------------------------------------------ | ------------------------- |
+| OpenAI    | [platform.openai.com](https://platform.openai.com)     | ~$5 credit free on signup |
+| Anthropic | [console.anthropic.com](https://console.anthropic.com) | ~$5 credit free           |
+| Others    | Added per module                                       | Free tiers available      |
 
 ---
 
@@ -142,4 +148,4 @@ Then open `module-00-foundations/01_tokens_and_costs.ipynb` 🚀
 
 ---
 
-*Made with ❤️ for the frontend dev who wants to build the future*
+_Made with ❤️ for the frontend dev who wants to build the future_
